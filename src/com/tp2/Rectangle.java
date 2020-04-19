@@ -52,7 +52,7 @@ public class Rectangle {
         return Double.compare(Area, Area2);
     }
 
-    public void reverse() {
+    public void reverse() {//todo revisar si es un intercambiar puntos o si es hacer negativas las coordenadas
         /*p1.swap(p3);
         p2.swap(p4);*/
         p1.setX(-p1.getX());
