@@ -1,5 +1,5 @@
-package com.tp2;
 
+package com.tp2;
 public class ElectricalAppliance {
     String name;
     double base_price;
@@ -13,7 +13,6 @@ public class ElectricalAppliance {
         base_price = 100;
         weight = 2;
     }
-
     public ElectricalAppliance(String name) {
         this.name = name;
         colour = "grey_silver";
@@ -21,7 +20,6 @@ public class ElectricalAppliance {
         base_price = 100;
         weight = 2;
     }
-
     public ElectricalAppliance(String name, String colour) {
         this.name = name;
         this.colour = colour;
@@ -29,7 +27,6 @@ public class ElectricalAppliance {
         base_price = 100;
         weight = 2;
     }
-
     public ElectricalAppliance(String name, String colour, int energy_consumption) {
         this.name = name;
         this.colour = colour;
@@ -37,7 +34,6 @@ public class ElectricalAppliance {
         base_price = 100;
         weight = 2;
     }
-
     public ElectricalAppliance(String name, String colour, int energy_consumption, int base_price) {
         this.name = name;
         this.colour = colour;
@@ -45,7 +41,6 @@ public class ElectricalAppliance {
         this.base_price = base_price;
         weight = 2;
     }
-
     public ElectricalAppliance(String name, String colour, int energy_consumption, int base_price, int weight) {
         this.name = name;
         this.colour = colour;

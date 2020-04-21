@@ -1,5 +1,5 @@
 package com.tp2;
-public class Person{
+public class Person {
     String name;
     String last_name;
     int age;
@@ -9,24 +9,72 @@ public class Person{
     double weight;
     double height;
 
-    //I won't use actual date.
-    public int getAge(){return age;}
-    public String getName(){return name;}
-    public String getLastName(){return last_name;}
-    public Date getBirthDate(){return birth_date;}
-    public int getId(){return id;}
-    public String getGenre(){return genre;}
-    public double getWeight(){return weight;}
-    public double getHeight(){return height;}
+    //Agrego esto para el ejercicio, de mas adelante del praactico
+    String number;
+    String email;
 
-    public void setName(String name){this.name = name;}
-    public void setLast_name(String last_name){this.last_name = last_name;}
-    public void setBirth_date(Date birth_date){this.birth_date= birth_date;}
-    public void setGenre(String genre){this.genre = genre;}
-    public void setWeight(double weight){this.weight = weight;}
+    //todo I won't use actual date.
+    public int getAge() {
+        return age;
+    }
 
-    public Person(int id){
-        birth_date = new Date(1,1,2000);
+    public String getName() {
+        return name;
+    }
+
+    public String getLastName() {
+        return last_name;
+    }
+
+    public Date getBirthDate() {
+        return birth_date;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getGenre() {
+        return genre;
+    }
+
+    public double getWeight() {
+        return weight;
+    }
+
+    public double getHeight() {
+        return height;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setLast_name(String last_name) {
+        this.last_name = last_name;
+    }
+
+    public void setBirth_date(Date birth_date) {
+        this.birth_date = birth_date;
+    }
+
+    public void setGenre(String genre) {
+        this.genre = genre;
+    }
+
+    public void setWeight(double weight) {
+        this.weight = weight;
+    }
+
+    public Person(String name, String last_name, String number, String email) {
+        this.name = name;
+        this.last_name = last_name;
+        this.number = number;
+        this.email = email;
+    }
+
+    public Person(int id) {
+        birth_date = new Date(1, 1, 2000);
         genre = "female";
         name = "N";
         last_name = "N";
@@ -34,8 +82,9 @@ public class Person{
         height = 1;
         //Calculo Age?
     }
-    public Person(int dni,String name,String last_name){
-        birth_date = new Date(1,1,2000);
+
+    public Person(int dni, String name, String last_name) {
+        birth_date = new Date(1, 1, 2000);
         genre = "female";
         this.name = name;
         this.last_name = last_name;
@@ -74,7 +123,7 @@ public class Person{
         return getWeight()/getHeight();
     }
     public boolean healthy(){
-        return (bodyMass() > 18.5 && bodyMass() < 25) ? true : false;
+        return bodyMass() > 18.5 && bodyMass() < 25;
     }
     public boolean birthday(){
         boolean birthday;
