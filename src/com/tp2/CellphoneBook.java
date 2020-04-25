@@ -24,8 +24,19 @@ public class CellphoneBook {
         return aux;
     }
 
+    private boolean isRepeated(Contact contact) {
+        for (Contact co : contactList) { //En vez de utilizar el contains uso este metodo
+            if (co.getName().equals(contact.getName()) &&
+                    co.getLast_name().equals(contact.getLast_name()) &&
+                    co.getNumber() == contact.getNumber()) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public void addContact(Contact contact) {
-        if (contactList.contains(contact)) {
+        if (this.isRepeated(contact)) {
             duplicatedContactList.add(contact);
         } else {
             contactList.add(contact);
