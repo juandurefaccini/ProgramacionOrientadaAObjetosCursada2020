@@ -24,8 +24,8 @@ public class Vertex {
         return aux;
     }
 
-    public void addEdge(Vertex destiny, int cost) {//todo condicion para no agregar dos arcos a un mismo vertice
-        edgeList.add(new Edge(destiny, cost));
+    public void addEdge(Edge edge) {
+        edgeList.add(edge);
     }
 
     public void removeEdge(Vertex destiny) {
@@ -53,13 +53,11 @@ public class Vertex {
         Vertex dos = new Vertex(2);
         Vertex tres = new Vertex(3);
         Vertex cinco = new Vertex(5);
-        uno.addEdge(new Vertex(2), 10);
-        uno.addEdge(new Vertex(5), 10);
-        uno.addEdge(new Vertex(3), 10);
         System.out.println(uno.getAdjacencyList());
         uno.removeEdge(new Vertex(5));
         uno.removeEdge(new Vertex(2));
         System.out.println(uno.getAdjacencyList());
         System.out.println(uno.isConnectedTo(new Vertex(3)));
     }
+
 }
