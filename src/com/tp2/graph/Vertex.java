@@ -1,4 +1,4 @@
-package com.tp2;
+package com.tp2.graph;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,6 +7,37 @@ import java.util.ListIterator;
 public class Vertex {
     int value;
     List<Edge> edgeList = new ArrayList<>();
+    boolean visited;
+    int discoverTime = -1;
+    int finishTime = -1;
+
+    public int getFinishTime() {
+        return finishTime;
+    }
+
+    public int getDiscoverTime() {
+        return discoverTime;
+    }
+
+    public void setVisited(boolean visited) {
+        this.visited = visited;
+    }
+
+    public boolean isVisited() {
+        return visited;
+    }
+
+    public boolean discovered() {
+        return discoverTime != -1;
+    }
+
+    public void setDiscoverTime(int discoverTime) {
+        this.discoverTime = discoverTime;
+    }
+
+    public void setFinishTime(int finishTime) {
+        this.finishTime = finishTime;
+    }
 
     public Vertex(int value) {
         this.value = value;
@@ -16,7 +47,7 @@ public class Vertex {
         return value;
     }
 
-    public List<Edge> getAdjacencyList() { //todo consultar: es necesario definir el tipo de lista en el retorno
+    public List getAdjacencyList() { //todo consultar: es necesario definir el tipo de lista en el retorno
         List<Edge> aux = new ArrayList<>();
         for (Edge edge : edgeList) {
             aux.add(edge);
@@ -24,8 +55,25 @@ public class Vertex {
         return aux;
     }
 
-    public void addEdge(Edge edge) {
-        edgeList.add(edge);
+    public List getAdjacentVertex() {
+        List<Vertex> aux = new ArrayList<>();
+        for (Edge edge : edgeList) {
+            aux.add(edge.getDestiny());
+        }
+        return aux;
+    }
+
+    public int getNumberOfAdjacentVertex() {
+        return edgeList.size();
+    }
+
+    public boolean addEdge(Edge edge) {
+        if (!this.isConnectedTo(edge.getDestiny())) {
+            edgeList.add(edge);
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public void removeEdge(Vertex destiny) {

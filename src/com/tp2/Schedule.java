@@ -13,6 +13,11 @@ public class Schedule {
     }
 
     public boolean addMeeting(Meeting met) {//todo optimizar
+        if (meetingList.isEmpty()) {
+            meetingList.add(met);
+            return true;
+        }
+
         for (Meeting me : meetingList) {
             if (met.overlap(me)) {
                 return false;

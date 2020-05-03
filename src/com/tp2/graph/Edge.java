@@ -1,6 +1,4 @@
-package com.tp2;
-
-import java.security.PublicKey;
+package com.tp2.graph;
 
 public class Edge {
     int cost;
