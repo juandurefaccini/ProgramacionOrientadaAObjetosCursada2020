@@ -13,7 +13,9 @@ public class Person {
     String number;
     String email;
 
-    //todo I won't use actual date.
+    public Person() {
+    }
+
     public int getAge() {
         return age;
     }
@@ -46,6 +48,7 @@ public class Person {
         return height;
     }
 
+    resumen
     public void setName(String name) {
         this.name = name;
     }
