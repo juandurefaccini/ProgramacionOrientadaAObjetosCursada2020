@@ -2,26 +2,27 @@ package library;
 
 import java.util.Objects;
 
-public class Text {
+abstract public class Text {
     String name = "n";
-    Person author;
+    Client author;
     double price = 0; //Los ultimos dos digitos son los centavos.
     int stock = 1; //Si se crea un libro, el stock inicialmente es 1
 
     public Text() {
     }
 
-    public Text(String name, Person author, double price) {
+    public Text(String name, Client author, double price) {
         this.name = name;
         this.author = author;
         this.price = price;
     }
 
+
     public String getName() {
         return name;
     }
 
-    public Person getAuthor() {
+    public Client getAuthor() {
         return author;
     }
 

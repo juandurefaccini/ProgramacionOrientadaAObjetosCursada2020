@@ -3,18 +3,77 @@ package library;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ListIterator;
+import java.util.Objects;
 
-public class Client extends Person {
+public class Client {
     String address = "n";
-    List<Person> favouriteAuthors = new ArrayList<>();
+    List<Client> favouriteAuthors = new ArrayList<>();
     List<Genre> favouriteGenres = new ArrayList<>();
     List<Text> purchasingRecord = new ArrayList<>();
+    int id = 0;
+    String name = "n";
+    String last_name = "n";
+    String genre = "n";
 
-    public Client(){    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Client client = (Client) o;
+        return id == client.id &&
+                Objects.equals(address, client.address) &&
+                Objects.equals(favouriteAuthors, client.favouriteAuthors) &&
+                Objects.equals(favouriteGenres, client.favouriteGenres) &&
+                Objects.equals(purchasingRecord, client.purchasingRecord) &&
+                Objects.equals(name, client.name) &&
+                Objects.equals(last_name, client.last_name) &&
+                Objects.equals(genre, client.genre);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(address, favouriteAuthors, favouriteGenres, purchasingRecord, id, name, last_name, genre);
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getLastName() {
+        return last_name;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getGenre() {
+        return genre;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setLastName(String last_name) {
+        this.last_name = last_name;
+    }
+
+    public void setGenre(String genre) {
+        this.genre = genre;
+    }
+
+    public Client() {
+    }
+//
 
     public Client(int id, String name, String last_name, String genre, String address) {
-        super(id, name, last_name, genre);
         this.address = address;
+        this.id = id;
+        this.name = name;
+        this.last_name = last_name;
+        this.genre = genre;
     }
 
     public boolean bought(Text text){
@@ -24,7 +83,8 @@ public class Client extends Person {
     public boolean likeGenre(Genre genre) {
         return favouriteGenres.contains(genre);
     }
-    public boolean likeAuthor(Person author) {
+
+    public boolean likeAuthor(Client author) {
         return favouriteAuthors.contains(author);
     }
 
@@ -35,7 +95,8 @@ public class Client extends Person {
         }
         return false;
     }
-    public boolean addAuthor(Person author) {
+
+    public boolean addAuthor(Client author) {
         if (!this.likeAuthor(author)) {
             favouriteAuthors.add(author);
             return true;
@@ -66,13 +127,13 @@ public class Client extends Person {
 
     public double getPrice(Text text){
         return text.getPrice();
-    };
+    }
 
-    public boolean likes(Person author){
+    public boolean likes(Client author) {
         return favouriteAuthors.contains(author);
     }
 
-    public boolean likes(Person author,Genre genre){
+    public boolean likes(Client author, Genre genre) {
         return favouriteAuthors.contains(author) && favouriteGenres.contains(genre);
     }
 
