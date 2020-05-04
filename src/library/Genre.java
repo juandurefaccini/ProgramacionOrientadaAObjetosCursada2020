@@ -28,4 +28,8 @@ public class Genre {
     public int hashCode() {
         return Objects.hash(genre);
     }
+
+    public String toString() {
+        return genre;
+    }
 }

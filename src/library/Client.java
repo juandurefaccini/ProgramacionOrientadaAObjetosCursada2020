@@ -139,10 +139,17 @@ public class Client {
 
     @Override
     public String toString() {
-        return "Client = " + name + "\n" +
-                "favouriteAuthors=" + favouriteAuthors +
-                "\n" +"favouriteGenres=" + favouriteGenres +
-                "\n" +"purchasingRecord=" + this.purchasingRecord;
+        String string = "name:" + name + "\n";
+        if (!favouriteAuthors.isEmpty()) {
+            string = string + "\n" + "Autores: " + favouriteAuthors.toString();
+        }
+        if (!favouriteGenres.isEmpty()) {
+            string = string + "\n" + "Generos: " + favouriteGenres.toString();
+        }
+        if (!purchasingRecord.isEmpty()) {
+            string = string + "\n" + "Registro " + purchasingRecord.toString();
+        }
+        return string;
     }
 
     public static void main(String[] args) {

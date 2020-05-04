@@ -8,6 +8,7 @@ import java.util.ListIterator;
 
 //Consideraciones, por cuestiones de simplificar, un cliente puede ser autor, pero no va a estar registrado en el sistema
 //Sino lo consideraba asi me traia problemas al momento de que una Persona quiera ser cliente.
+//Implemente un sistema de stock para no repetir ocurrencias del mismo libro
 
 public class Library {
     List<Text> textList = new ArrayList<>();
@@ -105,6 +106,8 @@ public class Library {
                 ", clientList=" + clientList + "\n" +
                 '}';
     }
+
+`
 
     public static void main(String[] args) {
         Library library = new Library(); //Instancio una libreria
