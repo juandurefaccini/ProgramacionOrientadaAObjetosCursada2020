@@ -10,7 +10,6 @@ public class Person {
     String last_name = "n";
     String genre = "n";
 
-
     public Person() {
     }
 
@@ -57,7 +56,7 @@ public class Person {
         this.name = name;
     }
 
-    public void setLast_name(String last_name) {
+    public void setLastName(String last_name) {
         this.last_name = last_name;
     }
 

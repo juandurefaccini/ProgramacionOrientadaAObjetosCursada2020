@@ -48,7 +48,6 @@ public class Person {
         return height;
     }
 
-    resumen
     public void setName(String name) {
         this.name = name;
     }
