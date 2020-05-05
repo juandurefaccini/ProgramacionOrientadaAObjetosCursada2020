@@ -66,7 +66,6 @@ public class Client {
 
     public Client() {
     }
-//
 
     public Client(int id, String name, String last_name, String genre, String address) {
         this.address = address;
@@ -139,15 +138,15 @@ public class Client {
 
     @Override
     public String toString() {
-        String string = "name:" + name + "\n";
+        String string = "name:" + name + " " + last_name;
         if (!favouriteAuthors.isEmpty()) {
-            string = string + "\n" + "Autores: " + favouriteAuthors.toString();
+            string = string + "  -->Autores: " + favouriteAuthors.toString();
         }
         if (!favouriteGenres.isEmpty()) {
-            string = string + "\n" + "Generos: " + favouriteGenres.toString();
+            string = string + "  -->Generos: " + favouriteGenres.toString();
         }
         if (!purchasingRecord.isEmpty()) {
-            string = string + "\n" + "Registro " + purchasingRecord.toString();
+            string = string + "  -->Registro " + purchasingRecord.toString();
         }
         return string;
     }

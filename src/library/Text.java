@@ -69,8 +69,7 @@ abstract public class Text {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Text text = (Text) o;
-        return price == text.price &&
-                Objects.equals(name, text.name) &&
+        return Objects.equals(name, text.name) &&
                 Objects.equals(author, text.author);
     }
 

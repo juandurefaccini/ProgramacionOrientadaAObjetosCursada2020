@@ -4,17 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ListIterator;
 
-//todo emprolijar acceso a metodos para que solo sean accesibles desde la clase
-
-//Consideraciones, por cuestiones de simplificar, un cliente puede ser autor, pero no va a estar registrado en el sistema
-//Sino lo consideraba asi me traia problemas al momento de que una Persona quiera ser cliente.
-//Implemente un sistema de stock para no repetir ocurrencias del mismo libro
+//Consideraciones
+//Implemente un sistema de stock para no repetir ocurrencias del mismo libro tanto en la libreria como en el usuario.
 
 public class Library {
     List<Text> textList = new ArrayList<>();
     List<Client> clientList = new ArrayList<>();
-//    List <Person> authorLists = new ArrayList<>();
-//    List <Genre> genreLists = new ArrayList<>();
 
     private int getText(Text text) {
         int pos = 0;
@@ -101,13 +96,11 @@ public class Library {
 
     @Override
     public String toString() {
-        return "Library{" +
-                "textList=" + textList + "\n" +
-                ", clientList=" + clientList + "\n" +
-                '}';
+        return "\n" + "Library" +
+                "\n" + "textList=" + textList + "\n" +
+                "clientList=" + clientList + "\n"
+                ;
     }
-
-`
 
     public static void main(String[] args) {
         Library library = new Library(); //Instancio una libreria
@@ -121,28 +114,40 @@ public class Library {
         Book libro_a = new Book("Cien años de soledad", gabriel, 500, 120, "", terror); //Creo un libro
         Book libro_b = new Book("Cien años de soledad 2", gabriel, 500, 120, "", ficcion); //Creo un libro
         Magazine revista_c = new Magazine("Revista Caras", jose, 100.00, 23, 2010);//Creo una revista
+        System.out.println("\n" + library.toString() + "\n"); //Mostrar el estado de la libreria con el libro comprado
 
         juan.addAuthor(gabriel);
-
         juan.addGenre(terror);
+
+        System.out.println(libro_a.toString()); //Muestro libro
+        System.out.println(libro_b.toString()); //Muestro libro
+        System.out.println(revista_c.toString()); //Muestro libro
+
 
         System.out.println(juan.toString()); //Deberia gustarle porque le gusta el autor
 
-        System.out.println(library.likesAuthor(juan, libro_a)); //Deberia gustarle porque le gusta el autor
-        System.out.println(library.likesAuthorAndGenre(juan, libro_b)); //No deberia gustarle porque no le gusta el genero
+        System.out.println("\n" + "library.likesAuthor(juan, libro_a)=" + library.likesAuthor(juan, libro_a)); //Deberia gustarle porque le gusta el autor
+        System.out.println("library.likesAuthorAndGenre(juan, libro_b)=" + library.likesAuthorAndGenre(juan, libro_b)); //No deberia gustarle porque no le gusta el genero
 
-//        System.out.println(library.likes(juan,gabriel,terror));
+        library.addText(libro_a, 100); //Agrego libro a stock de la liberia
+        library.addText(libro_b, 50);
 
-//        System.out.println(library.isLikedBy(juan_c,b.getAuthor())); //todo fix likes
-        library.addText(libro_a, 100);
-//        System.out.println(library.getStock(a));
+        System.out.println("Stock libro_a:" + library.getStock(libro_a)); //Muestro stock
+        System.out.println("Stock libro_b:" + library.getStock(libro_b));
+
+        library.sellText(libro_a, juan);
+        library.sellText(libro_a, juan);
+        library.sellText(libro_a, juan);
         library.sellText(libro_a, juan);
 
+        System.out.println("\n" + "Stock despues de la venta: ");
+        System.out.println("Stock libro_a:" + library.getStock(libro_a)); //Muestro stock
+        System.out.println("Stock libro_b:" + library.getStock(libro_b));
+
+        System.out.println("\n" + "A que precio se venderia a juan el libro? :" + library.getPrice(libro_a, juan));
+        System.out.println("\n" + "Juan compro el libro a?=" + library.bought(juan, libro_a));
 
         System.out.println(library.toString()); //Mostrar el estado de la libreria con el libro comprado
-//        System.out.println(library.likes(juan_c,juan,terror));
-//        System.out.println(a.getStock());
-        //System.out.println(juan.toString());
-//        System.out.println(library.toString());
+
     }
 }
