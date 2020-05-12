@@ -1,4 +1,4 @@
-package com.tp2;
+package edu.unicen.tp2;
 public class Person {
     String name;
     String last_name;

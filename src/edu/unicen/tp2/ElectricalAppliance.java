@@ -1,5 +1,5 @@
 
-package com.tp2;
+package edu.unicen.tp2;
 public class ElectricalAppliance {
     String name;
     double base_price;

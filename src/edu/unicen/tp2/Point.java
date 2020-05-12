@@ -1,7 +1,7 @@
-package com.tp2;
+package edu.unicen.tp2;
 
 import static java.lang.Math.pow;
-import static java.lang.Math.sqrt;//TODO esto se importa asi?
+import static java.lang.Math.sqrt;
 
 public class Point {
     double x;

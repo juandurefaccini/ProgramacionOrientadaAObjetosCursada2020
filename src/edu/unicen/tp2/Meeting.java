@@ -1,10 +1,9 @@
-package com.tp2;
+package edu.unicen.tp2;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import java.util.List;
-import java.util.ArrayList;
-import java.util.stream.Collectors;
 
 public class Meeting {
     String place;

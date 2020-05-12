@@ -1,4 +1,4 @@
-package com.tp2.graph;
+package edu.unicen.tp2.graph;
 
 import java.util.ArrayList;
 import java.util.List;

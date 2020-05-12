@@ -1,4 +1,4 @@
-package com.tp2;
+package edu.unicen.tp2;
 
 import java.util.ArrayList;
 import java.util.GregorianCalendar;

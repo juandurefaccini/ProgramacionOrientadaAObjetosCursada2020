@@ -123,7 +123,6 @@ public class Library {
         System.out.println(libro_b.toString()); //Muestro libro
         System.out.println(revista_c.toString()); //Muestro libro
 
-
         System.out.println(juan.toString()); //Deberia gustarle porque le gusta el autor
 
         System.out.println("\n" + "library.likesAuthor(juan, libro_a)=" + library.likesAuthor(juan, libro_a)); //Deberia gustarle porque le gusta el autor

@@ -1,8 +1,7 @@
-package com.tp2;
+package edu.unicen.tp2;
 
-import java.util.Iterator;
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Show {
     List<Season> seasonsList = new ArrayList<>();

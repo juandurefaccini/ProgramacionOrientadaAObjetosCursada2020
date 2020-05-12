@@ -1,4 +1,4 @@
-package com.tp2;
+package edu.unicen.tp2;
 
 /*Implementar la clase Rectángulo.
         Para esta clase es necesario definir el rectángulo utilizando los puntos como vértices. Se

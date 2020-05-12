@@ -1,7 +1,7 @@
-package com.tp2;
+package edu.unicen.tp2;
 
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 
 public class Season {
     List<Episode> episodeList = new ArrayList<>();

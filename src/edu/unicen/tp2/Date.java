@@ -1,7 +1,5 @@
-package com.tp2;
+package edu.unicen.tp2;
 //to_do->get system clock
-
-import javax.xml.stream.events.DTD;
 
 public class Date{
     int day;

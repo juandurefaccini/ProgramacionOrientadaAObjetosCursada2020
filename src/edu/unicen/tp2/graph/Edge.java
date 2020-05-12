@@ -1,4 +1,4 @@
-package com.tp2.graph;
+package edu.unicen.tp2.graph;
 
 public class Edge {
     int cost;
