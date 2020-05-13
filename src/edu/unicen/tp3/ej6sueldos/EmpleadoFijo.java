@@ -30,6 +30,7 @@ public class EmpleadoFijo {
         EmpleadoFijo e1 = new EmpleadoFijo("Juan", 10000);
         EmpleadoHorasExtras e2 = new EmpleadoHorasExtras("JuanHorasExtras", 10000);
         EmpleadoPorComision e3 = new EmpleadoPorComision("JuanComision", 10000);
+//        EmpleadoFijo e4 = new EmpleadoHorasExtras("a",1);
 
         System.out.println();
         System.out.println(e1);
