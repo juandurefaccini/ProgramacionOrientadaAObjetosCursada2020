@@ -58,6 +58,7 @@ public class SistemaAsignacion {
         Trabajo t2 = new Trabajo("EP2");
         Trabajo t3 = new Trabajo("EP3");
         Trabajo t4 = new Trabajo("EP4");
+        Poster t5 = new Poster("EP5");
 
         sistemaAsignacion.addTemasEspecificos("A");
 
@@ -78,6 +79,16 @@ public class SistemaAsignacion {
         t4.addTema("C");
         t4.addTema("D");
 
+        t4.addTema("A");
+        t4.addTema("B");
+        t4.addTema("C");
+        t4.addTema("D");
+
+        t5.addTema("D");
+        t5.addTema("E");
+        t5.addTema("F");
+        t5.addTema("G");
+
         ev.addTema("A");
         ev.addTema("B");
         ev.addTema("C");
@@ -86,6 +97,8 @@ public class SistemaAsignacion {
         ev2.addTema("B");
         ev2.addTema("C");
 
+        ev2.addTema("G");
+
         sistemaAsignacion.addEvaluador(ev);
         sistemaAsignacion.addEvaluador(ev2);
 
@@ -93,7 +106,7 @@ public class SistemaAsignacion {
         sistemaAsignacion.addTrabajo(t2);
         sistemaAsignacion.addTrabajo(t3);
 
-        System.out.println(sistemaAsignacion.posiblesEvaluadores(t));
+        System.out.println(sistemaAsignacion.posiblesEvaluadores(t5));
         System.out.println(sistemaAsignacion.posiblesTextos(ev));
 
         System.out.println(sistemaAsignacion.esExperto(ev));

@@ -7,6 +7,7 @@ public class Trabajo {
     String nombre;
     Collection<String> temasTratados = new ArrayList<>();
 
+    public Trabajo(){}
     public Trabajo(String nombre){
         this.nombre = nombre;
     }
