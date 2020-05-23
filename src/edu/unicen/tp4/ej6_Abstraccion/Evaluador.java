@@ -7,7 +7,7 @@ import java.util.Collections;
 public class Evaluador {
     Collection<String> listaTemas = new ArrayList<>();
 
-    public Collection<String> getCollectionTemas() {
+    public Collection<?> getCollectionTemas() {
         return Collections.unmodifiableCollection(listaTemas);
     }
 
