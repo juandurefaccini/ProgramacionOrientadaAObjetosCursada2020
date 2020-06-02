@@ -1,5 +1,7 @@
 package edu.unicen.practica.ejerciciosTP.TP5EJ1;
 
+import edu.unicen.practica.ejerciciosTP.TP5EJ1.Condicion.CondicionEFS;
+
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
@@ -31,6 +33,15 @@ public class Directorio extends EFS {
         int totalCant = 1;
         for (EFS archivo : archivos) totalCant = totalCant + archivo.getCantElementos();
         return totalCant;
+    }
+
+    @Override
+    public Set<EFS> cumpleCondicion(CondicionEFS c) {
+        Set<EFS> result = new HashSet<>();
+        for (EFS elem:archivos){
+            result.addAll(elem.cumpleCondicion(c));
+        }
+        return result;
     }
 
     @Override

@@ -1,9 +1,23 @@
 package edu.unicen.practica.ejerciciosTP.TP5EJ1;
 
+import edu.unicen.practica.ejerciciosTP.TP5EJ1.Condicion.CondicionEFS;
+
+import java.util.HashSet;
+import java.util.Set;
+
 public class Archivo extends EFS {
     String fechaM;
     String extension;
     int size;
+
+    @Override
+    public Set<EFS> cumpleCondicion(CondicionEFS c) {
+        Set<EFS> result = new HashSet<>();
+        if(c.cumpleCondicion(this)){
+            result.add(this);
+        }
+        return result;
+    }
 
     public Archivo(String nombre, String extension, int size) {
         super(nombre, " ");
@@ -35,7 +49,7 @@ public class Archivo extends EFS {
 
     @Override
     public String toString() {
-        return getNombre() + "." + extension;
+        return getNombre() + "." + extension + " size: " + getSize();
     }
 
     public void setSize(int size) {
